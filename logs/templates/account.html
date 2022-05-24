@@ -4,30 +4,32 @@
 
 {% block conteudo %}
 <section class='content' id='two'>
-    <p>Crie sua conta para acessar o aplicativo. Caso tenha esquecido sua senha <a href="#">Clique aqui.</a></p>
-
     <form method="post">{% csrf_token %}
         <div class='label-float'>
-            <label>Usuário</label>
+            <label>Nome da empresa / pessoal</label>
             <div class='pass'>
                 <input type="text">
             </div>
         </div>
-
+        <div class='label-float'>
+            <label>E-mail</label>
+            <div class='pass'>
+                <input type="email" name="email" id="email" placeholder='Seu melhor e-mail'>
+            </div>
+        </div>
+        <div class='label-float'>
+            <label>WhatsApp</label>
+            <div class='pass'>
+                <input type="tel" name="telefone" id="telefone" placeholder='Contato do WhatsApp'>
+            </div>
+        </div>
         <div class='label-float'>
             <label>Senha</label>
             <div class='pass'>
-                <input type="password" name="password1" id="senha1">
+                <input type="password" name="password1" id="senha1" placeholder='6 Caracteres ou mais'>
                 <i class="fa-regular fa-eye" id='eye1'></i>
             </div>
 
-        </div>
-        <div class='label-float'>
-            <label>Confirme sua senha</label>
-            <div class='pass'>
-                <input type="password" name="password2" id="senha2">
-                <i class="fa-regular fa-eye" id='eye2'></i>
-            </div>
         </div>
         <div class='box-button'>
             <button type="submit">Criar</button>
@@ -37,4 +39,8 @@
 </section>
 {% endblock conteudo %}
 
-{% block obs %}{% endblock obs %}
+{% block obs %}
+    <div class='support-text'>
+        <p>Crie sua conta para acessar o aplicativo. Caso tenha esquecido sua senha <a href="#">Clique aqui.</a></p>
+    </div>
+{% endblock obs %}

@@ -164,7 +164,7 @@ p>a {
 }
 
 .header h3 {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     text-align: center;
     color: #2ad12b;
     font-variant-caps: all-petite-caps;
@@ -242,6 +242,10 @@ div>i.fa-solid {
     justify-content: center;
 }
 
+.support-text>p>a {
+    color: #25d227;
+}
+
 .support-text p {
     width: 50%;
     font-variant-caps: all-petite-caps;
@@ -301,7 +305,6 @@ input {
 .label-float {
     width: 20em;
     position: relative;
-    padding-top: 13px;
 }
 
 .label-float input {
@@ -333,15 +336,15 @@ input {
     align-items: center;
 }
 
-.box-button button{
+.box-button button {
     padding: 15px;
     width: 50%;
-    margin-top: 2em;
+    margin-top: 1em;
     font-size: 18px;
     background: #2ad12b;
-    border: 2px solid black;
+    border: 2px solid #c1c1c1;
     border-radius: 15px;
-    color: black;
+    color: white;
     cursor: pointer;
 }
 
