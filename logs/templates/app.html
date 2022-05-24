@@ -5,6 +5,8 @@
 {% block conteudo %}
     <section class="content" id='two'>
         <form method="post">{% csrf_token %}
+            <br>
+            <br>
             <div class='label-float'>
                 <label>E-mail</label>
                 <div class='pass'>
@@ -20,6 +22,6 @@
 
 {% block obs %}
     <div class='support-text'>
-        <p>O link para download do aplicativo só será enviado se o e-mail estiver vinculada a uma conta.</p>
+        <p>O link para download do aplicativo só será enviado se o e-mail acima estiver vinculado a uma conta.</p>
     </div>
 {% endblock obs %}

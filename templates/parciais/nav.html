@@ -1,11 +1,15 @@
 {% load static %}
+<input type="checkbox" id="bt_menu">
+<label for="bt_menu">&#9776;</label>
 <nav class="menu">
+    {% with request.resolver_match.url_name as url_name %}
     <ul>
-        <li class='home'><a href="{% url 'help' %}" class="home" style="border: 0;">Como instalar?</a></li>
-        <li><a href="{% url 'account' %}">Criar conta</a></li>
-        <li><a href="{% url 'app' %}" class='btn-cadastro'>Baixar aplicativo <i class="fa-solid fa-download"></i></a></li>
+        <li class='{% if url_name == 'help' %}active{% endif %}'><a href="{% url 'help' %}">Como instalar?</a></li>
+        <li class='{% if url_name == 'account' %}active{% endif %}'><a href="{% url 'account' %}">Criar conta</a></li>
+        <li  class='{% if url_name == 'app' %}active{% endif %}'> <a href="{% url 'app' %}" class='btn-cadastro'>Baixar aplicativo <i class="fa-solid fa-download"></i></a></li>
     </ul>
+    {% endwith %}
     <div class='icon-top'>
-        <a href="https://www.caltecbalancas.com.br/"><img src="{% static 'img/icon.ico' %}" class='img-medium' /></a>
+        <a href="https://www.caltecbalancas.com.br/"><img src="{% static 'img/logo.png' %}" class='img-medium' /></a>
     </div>
 </nav>    
