@@ -1,0 +1,40 @@
+{% extends 'html/base.html' %}
+
+{% block titulo %} <h3>Criar conta</h3> {% endblock titulo %}
+
+{% block conteudo %}
+<section class='content' id='two'>
+    <p>Crie sua conta para acessar o aplicativo. Caso tenha esquecido sua senha <a href="#">Clique aqui.</a></p>
+
+    <form method="post">{% csrf_token %}
+        <div class='label-float'>
+            <label>Usuário</label>
+            <div class='pass'>
+                <input type="text">
+            </div>
+        </div>
+
+        <div class='label-float'>
+            <label>Senha</label>
+            <div class='pass'>
+                <input type="password" name="password1" id="senha1">
+                <i class="fa-regular fa-eye" id='eye1'></i>
+            </div>
+
+        </div>
+        <div class='label-float'>
+            <label>Confirme sua senha</label>
+            <div class='pass'>
+                <input type="password" name="password2" id="senha2">
+                <i class="fa-regular fa-eye" id='eye2'></i>
+            </div>
+        </div>
+        <div class='box-button'>
+            <button type="submit">Criar</button>
+        </div>
+        
+    </form>
+</section>
+{% endblock conteudo %}
+
+{% block obs %}{% endblock obs %}

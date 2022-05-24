@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'bootstrap4',
+    
     'logs'
 ]
 
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'Caltec.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [Path.joinpath(BASE_DIR, 'templates/html')],
+        'DIRS': [Path.joinpath(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

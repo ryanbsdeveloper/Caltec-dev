@@ -1,0 +1,11 @@
+{% load static %}
+<nav class="menu">
+    <ul>
+        <li class='home'><a href="{% url 'help' %}" class="home" style="border: 0;">Como instalar?</a></li>
+        <li><a href="{% url 'account' %}">Criar conta</a></li>
+        <li><a href="#" class='btn-cadastro'>Baixar aplicativo <i class="fa-solid fa-download"></i></a></li>
+    </ul>
+    <div class='icon-top'>
+        <a href="https://www.caltecbalancas.com.br/"><img src="{% static 'img/icon.ico' %}" class='img-medium' /></a>
+    </div>
+</nav>    
