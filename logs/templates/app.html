@@ -4,6 +4,7 @@
 
 {% block conteudo %}
     <section class="content" id='two'>
+        <h4>Informe o e-mail da sua conta para receber o link do download do aplicativo.</h4>
         <form method="post">{% csrf_token %}
             <br>
             <br>
@@ -22,6 +23,6 @@
 
 {% block obs %}
     <div class='support-text'>
-        <p>O link para download do aplicativo só será enviado se o e-mail acima estiver vinculado a uma conta.</p>
+        <p><strong>OBS:</strong> O link para download do aplicativo só será enviado se o e-mail acima estiver vinculado a uma conta.</p>
     </div>
 {% endblock obs %}

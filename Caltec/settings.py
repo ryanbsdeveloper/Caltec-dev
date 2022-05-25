@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'bootstrap4',
-    
+
     'logs'
 ]
 
@@ -73,18 +73,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Caltec.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.p',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'caltecbalancas',
+        'USER': 'ryanl',
+        'PASSWORD': '842684265@Ry',
+        'HOST': 'caltecbalancas.postgres.database.azure.com',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
