@@ -27,7 +27,18 @@ class Account(View):
         password = request.POST['password']
         
         tel = telefone(tel)
-        if not tel:
+        db_email = UsersModel.objects.filter(email=email)
+        db_tel = UsersModel.objects.filter(whatsapp=tel)
+        
+        if db_email:
+            error(request, 'Email já está em uso')
+            return render(request, self.template_name)
+
+        elif db_tel:
+            error(request, 'Telefone já está em uso')
+            return render(request, self.template_name)
+
+        elif not tel:
             error(request, 'Número inválido')
             return render(request, self.template_name)
         elif len(tel) == 9:
