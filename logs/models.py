@@ -7,3 +7,5 @@ class UsersModel(models.Model):
     senha = models.CharField(verbose_name='Senha', max_length=200)
     licenca = models.CharField(verbose_name="Licença", default='gratuita', null=True, max_length=50)
 
+    def __str__(self) -> str:
+        return self.email

@@ -11,9 +11,20 @@
             <div class='label-float'>
                 <label>E-mail</label>
                 <div class='pass'>
-                    <input type="email" name="email" id="email" placeholder='E-mail da sua conta'>
+                    <input type="email" required name="email" id="email" placeholder='E-mail da sua conta'>
                 </div>
             </div>
+            <div class='sos'>
+                <div class="so">
+                    <label ><i class="fa-brands fa-windows"></i></label>
+                    <input type="radio" required name="so" value="windows">
+                </div>
+                <div class="so">
+                    <label><i class="fa-brands fa-linux"></i></label>
+                    <input type="radio" required name="so" id="linux">
+                </div>
+            </div>
+            {% include 'parciais/messages.html' %}
             <div class='box-button'>
                 <button type="submit">Enviar link</button>
             </div>

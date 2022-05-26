@@ -8,7 +8,7 @@
         <div class='label-float'>
             <label>Nome da empresa / pessoal</label>
             <div class='pass'>
-                <input type="text">
+                <input type="text" required  name='nome'>
             </div>
         </div>
         <div class='label-float'>
@@ -20,21 +20,21 @@
         <div class='label-float'>
             <label>WhatsApp</label>
             <div class='pass'>
-                <input type="tel" name="telefone" id="telefone" placeholder='Contato do WhatsApp'>
+                <input type="tel" required  name="telefone" id="telefone" placeholder='Contato do WhatsApp'>
             </div>
         </div>
         <div class='label-float'>
             <label>Senha</label>
             <div class='pass'>
-                <input type="password" name="password1" id="senha1" placeholder='6 Caracteres ou mais'>
+                <input type="password" required name="password" id="senha1" placeholder='6 Caracteres ou mais'>
                 <i class="fa-regular fa-eye" id='eye1'></i>
             </div>
 
         </div>
+        {% include 'parciais/messages.html' %}
         <div class='box-button'>
             <button type="submit">Criar</button>
         </div>
-        
     </form>
 </section>
 {% endblock conteudo %}

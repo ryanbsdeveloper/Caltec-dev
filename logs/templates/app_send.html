@@ -1,0 +1,16 @@
+{% extends 'html/base.html' %}
+
+{% block titulo %} <h3>Baixar o aplicativo <i class="fa-solid fa-download"></i></h3>{% endblock titulo %}
+
+{% block conteudo %}
+    <section class="content" id='two'>
+        <i class="fa-solid fa-paper-plane"></i>
+        <h1>O link de donwload foi enviado para: <span class='email'>{{email}}</span></h1>
+    </section>
+{% endblock conteudo %}
+
+{% block obs %}
+    <div class='support-text'>
+        <p><strong>OBS:</strong> Verifique a caixa de spam</p>
+    </div>
+{% endblock obs %}
