@@ -13,6 +13,7 @@ class Help(TemplateView):
     def get(self, request):
         return render(request, self.template_name)
 
+
 class Account(View):
     template_name = 'account.html'
     template_name_success = 'account_created.html'
