@@ -1,10 +1,10 @@
 {% extends 'html/base.html' %}
 
-{% block titulo %} <h3>Baixar o Sistema <i class="fa-solid fa-download"></i></h3>{% endblock titulo %}
+{% block titulo %} <h3>Baixar o Software <i class="fa-solid fa-download"></i></h3>{% endblock titulo %}
 
 {% block conteudo %}
     <section class="content" id='two'>
-        <h4>Informe o e-mail da sua conta para receber o link do download do Sistema.</h4>
+        <h4>Informe o e-mail da sua conta para receber o link do download do Software.</h4>
         <form method="post">{% csrf_token %}
             <br>
             <br>
@@ -34,6 +34,6 @@
 
 {% block obs %}
     <div class='support-text'>
-        <p><strong>OBS:</strong> O link para download do Sistema só será enviado se o e-mail acima estiver vinculado a uma conta.</p>
+        <p><strong>OBS:</strong> O link para download do Software só será enviado se o e-mail acima estiver vinculado a uma conta.</p>
     </div>
 {% endblock obs %}
