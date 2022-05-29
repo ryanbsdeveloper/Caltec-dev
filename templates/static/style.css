@@ -139,7 +139,7 @@ label[for='bt_menu']:hover {
     .menu {
         margin-left: -110%;
         transition: all .4s;
-        height: 100%;
+        height: 89%;
         position: fixed;
         z-index: 1;
         background: #ffffff96;
@@ -277,7 +277,6 @@ p>a {
 
 #two {
     align-items: center;
-    width: auto;
 }
 
 p {
@@ -356,6 +355,7 @@ i.fa-solid.fa-check {
     font-size: 50px;
     color: #2ad12b;
 }
+
 i.fa-solid.fa-paper-plane {
     font-size: 50px;
     color: #000000;
@@ -365,7 +365,7 @@ i.fa-solid.fa-paper-plane {
     color: #25d227;
     margin-bottom: 1em;
     font-variant-caps: normal;
-    font-size: 16px;
+    font-size: smaller;
 }
 h2 {
     font-variant-caps: all-petite-caps;

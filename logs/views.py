@@ -1,7 +1,14 @@
-import email
+import os
+from functools import lru_cache
 from django.shortcuts import render
 from django.views.generic import TemplateView, View
 from django.contrib.messages import success, error
+from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
+from django.utils.html import strip_tags
+from django.template.loader import render_to_string
+from email.mime.image import MIMEImage
+from django.contrib.staticfiles import finders
 
 from .models import UsersModel
 from .utils import telefone
@@ -75,9 +82,16 @@ class App(View):
             'email':request.POST['email']
         }
         email = request.POST['email']
-        db = UsersModel.objects.filter(email=email)
+        db = UsersModel.objects.filter(email=email).values()
         if db:
-            '''Código pra enviar email'''
+            nome = db[0]['nome']
+            html = render_to_string(
+                'send_email.html', {'link': 'https://drive.google.com/u/0/uc?id=1r3Oj4SkFXE1ZDDvdCoPTFDXEwNJae4nM&export=download', 'nome': nome})
+            msg = strip_tags(html)
+            email = EmailMultiAlternatives(
+                'Caltec - Sistema de pesagem', msg, settings.EMAIL_HOST_USER, [f'{email}'])
+            email.attach_alternative(html, 'text/html')
+            email.send()
             return render(request, self.template_name_success, context)
         else:
             error(request, 'Esse e-mail não está vinculado a nenhuma conta')
