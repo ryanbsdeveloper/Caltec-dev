@@ -65,7 +65,7 @@ class Account(View):
             error(request, 'Senha muito curta.')
             return render(request, self.template_name)
 
-        db = UsersModel(nome=name, email=email, whatsapp=tel, senha=password, licenca='free')
+        db = UsersModel(nome=name, email=email, whatsapp=tel, senha=password)
         db.save()
         return render(request, self.template_name_success)
 
@@ -86,7 +86,7 @@ class App(View):
         if db:
             nome = db[0]['nome']
             html = render_to_string(
-                'send_email.html', {'link': 'https://drive.google.com/u/0/uc?id=1r3Oj4SkFXE1ZDDvdCoPTFDXEwNJae4nM&export=download', 'nome': nome})
+                'send_email.html', {'link': 'https://drive.google.com/u/0/uc?id=1WEI3BqIg1cR97K994s8r0JB4NmY6GyHu&export=download', 'nome': nome})
             msg = strip_tags(html)
             email = EmailMultiAlternatives(
                 'Caltec - Sistema de pesagem', msg, settings.EMAIL_HOST_USER, [f'{email}'])
@@ -96,4 +96,6 @@ class App(View):
         else:
             error(request, 'Esse e-mail não está vinculado a nenhuma conta')
             return render(request, self.template_name)
+
+
 
