@@ -1,16 +1,15 @@
 import os
-from functools import lru_cache
+import django
 from django.shortcuts import render
 from django.views.generic import TemplateView, View
-from django.contrib.messages import success, error
+from django.contrib.messages import error
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.utils.html import strip_tags
+from django.views.decorators.csrf import csrf_exempt, requires_csrf_token
 from django.template.loader import render_to_string
-from email.mime.image import MIMEImage
-from django.contrib.staticfiles import finders
 
-from .models import UsersModel
+from .models import UsersModel, Notificacoes
 from .utils import telefone
 
 
@@ -98,4 +97,13 @@ class App(View):
             return render(request, self.template_name)
 
 
+class Pag(View):
+    template_name = 'notificacoes.html'
 
+    def get(self, request, *args, **kwargs):
+
+        notificações = Notificacoes.objects.all()
+        context = {
+            'notificacoes': notificações
+            }
+        return render(request, self.template_name, context )
