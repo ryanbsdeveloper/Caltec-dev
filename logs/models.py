@@ -11,9 +11,12 @@ class UsersModel(models.Model):
     def __str__(self) -> str:
         return self.email
 
-class Notificacoes(models.Model):
-    email = models.EmailField(verbose_name='Email', max_length=100, unique=True, null=True)
+class NotificaçõesModel(models.Model):
     notificationCode = models.CharField(verbose_name='Código Notificação', max_length=200,null=True)
-    notificationType = models.CharField(verbose_name='Tipo do código', max_length=200,null=True)
+    notificationType = models.CharField(verbose_name='Tipo do Notificação', max_length=200,null=True)
+    status = models.CharField(verbose_name='Status', max_length=200, default='Esperando status', null=True)
 
+    class Meta:
+        verbose_name = 'Notificação'
+        verbose_name_plural = 'Notificações'
 

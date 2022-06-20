@@ -1,17 +1,15 @@
 import os
 import django
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from django.views.generic import TemplateView, View
 from django.contrib.messages import error
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.utils.html import strip_tags
-from django.views.decorators.csrf import csrf_exempt, requires_csrf_token
+from django.views.decorators.csrf import csrf_protect, requires_csrf_token
 from django.template.loader import render_to_string
 
-from .models import UsersModel, Notificacoes
 from .utils import telefone
-
 
 class Help(TemplateView):
     template_name = 'help.html'
@@ -96,14 +94,3 @@ class App(View):
             error(request, 'Esse e-mail não está vinculado a nenhuma conta')
             return render(request, self.template_name)
 
-
-class Pag(View):
-    template_name = 'notificacoes.html'
-
-    def get(self, request, *args, **kwargs):
-
-        notificações = Notificacoes.objects.all()
-        context = {
-            'notificacoes': notificações
-            }
-        return render(request, self.template_name, context )

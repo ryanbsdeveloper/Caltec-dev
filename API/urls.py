@@ -5,5 +5,5 @@ from .views import NotificaçoesView
 app_name = "api"
 
 urlpatterns = [
-    path('api/', NotificaçoesView.as_view()),
+    path('recebendo-notificações/', NotificaçoesView.as_view()),
 ]

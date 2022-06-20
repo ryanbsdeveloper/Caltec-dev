@@ -1,10 +1,10 @@
 from rest_framework.serializers import ModelSerializer
-from logs.models import Notificacoes
+from logs.models import NotificaçõesModel
 
 class NotificaçõesSerializer(ModelSerializer):
 
     class Meta:
-        model = Notificacoes
+        model = NotificaçõesModel
         fields = (
             'id',
             'email',
